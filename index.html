@@ -29,7 +29,7 @@
 					<p class="navbar-item has-text-black" style="font-size : 18px; margin-left: 10px">PROMISE</p>
 				</div>
 				<div class="column center">
-					<p class="navbar-item has-text-white desktop">HOME</p>
+					<p class="navbar-item has-text-black desktop">HOME</p>
 					<p class="navbar-item has-text-black desktop">ABOUT</p>
 					<p class="navbar-item has-text-black desktop">MARKET </p>
 					<p class="navbar-item has-text-black desktop">FAQ</p>
@@ -37,9 +37,46 @@
 				</div>
 				<div class="column right">
 					<p class="navbar-item desktop has-text-black">SIGN IN</p>
-					<figure class="navbar-item image">
-						<i class="fas fa-bars has-text-black center" style="width : 1rem; height : 1rem"></i>
-					</figure>
+
+
+
+					<div class="dropdown :is-active="hamberger" is-right">
+	  <div class="dropdown-trigger">
+			<figure class="navbar-item image">
+ 			 <i class="fas fa-bars has-text-black center" style="width : 1rem; height : 1rem"></i>
+ 		 </figure>
+	  </div>
+	  <div class="dropdown-menu" id="dropdown-menu3" role="menu">
+	    <div class="dropdown-content">
+	      <a href="#" class="dropdown-item">
+	        HOME
+	      </a>
+	      <a href="#" class="dropdown-item">
+	        ABOUT
+	      </a>
+	      <a href="#" class="dropdown-item">
+	        MARKET
+	      </a>
+	      <a href="#" class="dropdown-item">
+	        FAQ
+	      </a>
+				<a href="#" class="dropdown-item">
+	       	My Page
+	      </a>
+
+	      <hr class="dropdown-divider">
+	      <a href="#" class="dropdown-item">
+	        SIGN IN
+	      </a>
+				<a href="#" class="dropdown-item">
+	        SIGN UP
+	      </a>
+	    </div>
+	  </div>
+	</div>
+
+
+
 
 				</div>
 
@@ -281,5 +318,21 @@
 
 							</div>
 						</section>
+
+
+						<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"> </script>
+						<script>
+
+						var app = new Vue({
+							el : '#root',
+							data : {
+								hamberger : false
+							},
+							methods : {
+								toggle-burger
+							}
+						})
+
+						</script>
 					</body>
 					</html>
