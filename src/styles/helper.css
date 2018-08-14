@@ -14,11 +14,17 @@
 .left{justify-content: flex-start;}
 
 .single-spaced, .single-spaced * {
-	line-height: 1;
+	line-height: 1.4;
 }
 
 @media (max-width: 768px){
 	.desktop{
 		display: none;
+	}
+}
+
+@media (min-width:768px){
+	.mobile{
+		display:none;
 	}
 }
