@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>PROMISE</title>
+	<title>Roomie</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css">
 	<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"> </script>
 	<link rel="stylesheet" href="src/styles/helper.css">
@@ -18,6 +18,11 @@
 			margin-left : 28px;
 			margin-right : 28px;
 		}
+
+		.aboutcolumn { /*어바웃 사이에 있는 콜럼간의 거리를 조정함*/
+			padding-left : 1%;
+			padding-right : 1%;
+		}
 	}
 
 	@media (min-width: 768px) { /* at desktop*/
@@ -30,7 +35,10 @@
 		#blog {
 			font-size: 1.3em;
 		}
-
+		.aboutcolumn { /*어바웃 사이에 있는 콜럼간의 거리를 조정함*/
+			padding-left : 15%;
+			padding-right : 15%;
+		}
 		.blog-column {
 
 		}
@@ -49,7 +57,7 @@
 					<div class="column left">
 						<p class="navbar-item has-text-black has-text-weight-bold" style="font-size : 18px; margin-left: 10px">ROOMIE</p>
 					</div>
-					<div class="column center">
+					<div class="column center nav">
 						<p class="navbar-item has-text-black desktop " style="font-size :18px; margin:10px;">HOME</p>
 						<p class="navbar-item has-text-black desktop " style="font-size :18px; margin:10px;">ABOUT</p>
 						<p class="navbar-item has-text-black desktop " style="font-size :18px; margin:10px;">MARKET </p>
@@ -57,7 +65,7 @@
 						<p class="navbar-item has-text-black desktop " style="font-size :18px; margin:10px;">MY PAGE</p>
 					</div>
 					<div class="column right">
-						<p class="navbar-item desktop has-text-black" style="font-size :19px; margin-left:20px;">SIGN IN</p>
+						<p class="navbar-item desktop has-text-black" style="font-size :19px; margin-left:20px;" @click="toggleLoginModalOn" >SIGN UP</p>
 
 
 
@@ -86,10 +94,10 @@
 									</a>
 
 									<hr class="dropdown-divider">
-									<a href="#"  v-scroll-to="'#login'" class="dropdown-item">
+									<a href="#"  @click="toggleLoginModalOn" class="dropdown-item">
 										SIGN IN
 									</a>
-									<a href="#" v-scroll-to="'#login'" class="dropdown-item">
+									<a href="#" @click="toggleLoginModalOn" class="dropdown-item">
 										SIGN UP
 									</a>
 								</div>
@@ -110,8 +118,8 @@
 
 					<h1 class="title is-1 has-text-black mobile">ROOMIE</h1>
 					<h1 class="title is-1 has-text-black desktop" style="font-size:100px; margin-bottom:0px">ROOMIE</h1>
-					<h1 class="subtitle is-5 has-text-black has-text-weight-light mobile">Blockchain based Real-Esate Contract </h1>
-					<h1 class="subtitle is-5 has-text-black has-text-weight-light desktop" style="font-size:30px;">Blockchain based Real-Esate Contract </h1>
+					<h1 class="subtitle is-5 has-text-black has-text-weight-light mobile">Safer, Faster Real-Estate Market <br> based on <strong>blockchain</strong> </h1>
+					<h1 class="subtitle is-5 has-text-black has-text-weight-light desktop" style="font-size:30px;"> Ethereum <strong>Smart Contract</strong> based<br> Real-Esate market platform </h1>
 					<a class="button is-link is-inverted is-outlined"  v-scroll-to="'#feature'" href="#" style="color: black; border-color: black; margin-top:30px; padding-left:20px; padding-right:20px">Explore More</a>
 				</div>
 			</header>
@@ -140,7 +148,7 @@
 		</section>
 
 		<!-- ABOUT body -->
-		<section class="section" style="padding-left : 15%; padding-right : 15%;">
+		<section class="section aboutcolumn">
 			<div class="columns">
 
 
@@ -226,7 +234,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="container center"><a class="button is-link is-inverted is-outlined"  href="market.html" style="color: black; border-color: black; margin-top:30px; padding-left:20px; padding-right:20px">Explore More</a></div>
+			<div class="container center"><a class="button is-link is-inverted is-outlined"  href="market.html" style="color: black; border-color: black; margin-top:30px; padding-left:20px; padding-right:20px">Go to market</a></div>
 		</section>
 
 		<!-- Company Road Map -->
@@ -431,50 +439,50 @@
 		</section>
 
 		<!-- login modal -->
-
-		<section class="containerLogin" style="margin-bottom:42px" id="login">
-			<article class="half">
-				<h1>Roomie</h1>
-				<div class="tabs">
-					<span class="tab signin active"><a href="#signin">Sign in</a></span>
-					<span class="tab signup"><a href="#signup">Sign up</a></span>
-				</div>
-				<div class="content">
-					<div class="signin-cont cont">
-						<form action="#" method="post" enctype="multipart/form-data">
-							<input type="email" name="email" id="email" class="inpt" required="required" placeholder="Your email">
-							<label for="email">Your email</label>
-							<input type="password" name="password" id="password" class="inpt" required="required" placeholder="Your password">
-							<label for="password">Your password</label>
-							<input type="checkbox" id="remember" class="checkbox" checked>
-							<label for="remember">Remember me</label>
-							<div class="submit-wrap">
-								<input type="submit" value="Sign in" class="submit">
-								<a href="#" class="more">Forgot your password?</a>
-							</div>
-						</form>
+		<section class="container">
+			<section class="containerLogin" style="margin-bottom:42px" id="login">
+				<article class="half">
+					<h1>Roomie</h1>
+					<div class="tabs">
+						<span class="tab signin active"><a href="#signin">Sign in</a></span>
+						<span class="tab signup"><a href="#signup">Sign up</a></span>
 					</div>
-					<div class="signup-cont cont">
-						<form action="#" method="post" enctype="multipart/form-data">
-							<input type="name" name="name" id="name" class="inpt" required="required" placeholder="Your name">
-							<label for="name">Your name</label>
-							<input type="email" name="email" id="email" class="inpt" required="required" placeholder="Your email">
-							<label for="email">Your email</label>
-							<input type="password" name="password" id="password" class="inpt" required="required" placeholder="Your password">
-							<label for="password">Your password</label>
-							<input type="checkbox" id="remember" class="checkbox" checked>
-							<label for="remember">Remember me</label>
-							<div class="submit-wrap">
-								<input type="submit" value="Sign up" class="submit">
-								<a href="#" class="more">Terms and conditions</a>
-							</div>
-						</form>
+					<div class="content">
+						<div class="signin-cont cont">
+							<form action="#" method="post" enctype="multipart/form-data">
+								<input type="email" name="email" id="email" class="inpt" required="required" placeholder="Your email">
+								<label for="email">Your email</label>
+								<input type="password" name="password" id="password" class="inpt" required="required" placeholder="Your password">
+								<label for="password">Your password</label>
+								<input type="checkbox" id="remember" class="checkbox" checked>
+								<label for="remember">Remember me</label>
+								<div class="submit-wrap">
+									<input type="submit" value="Sign in" class="submit">
+									<a href="#" class="more">Forgot your password?</a>
+								</div>
+							</form>
+						</div>
+						<div class="signup-cont cont">
+							<form action="#" method="post" enctype="multipart/form-data">
+								<input type="name" name="name" id="name" class="inpt" required="required" placeholder="Your name">
+								<label for="name">Your name</label>
+								<input type="email" name="email" id="email" class="inpt" required="required" placeholder="Your email">
+								<label for="email">Your email</label>
+								<input type="password" name="password" id="password" class="inpt" required="required" placeholder="Your password">
+								<label for="password">Your password</label>
+								<input type="checkbox" id="remember" class="checkbox" checked>
+								<label for="remember">Send me newsletter :)</label>
+								<div class="submit-wrap">
+									<input type="submit" value="Sign up" class="submit">
+									<a href="#" class="more">Terms and conditions</a>
+								</div>
+							</form>
+						</div>
 					</div>
-				</div>
-			</article>
-			<div class="half bg"></div>
+				</article>
+				<div class="half bg"></div>
+			</section>
 		</section>
-
 
 		<!--footer -->
 
@@ -506,6 +514,57 @@
 																</div>
 															</div>
 														</footer>
+
+														<!-- login modal not active -->
+
+														<div :class="{'modal': true, 'is-active' : loginModalOn}">
+															<div class="modal-background"></div>
+															<div class="modal-content">
+																<!-- Any other Bulma elements you want -->
+																<section class="containerLogin">
+																	<article class="half">
+																		<h1>Azure</h1>
+																		<div class="tabs">
+																			<span class="tab signin active"><a href="#signin">Sign in</a></span>
+																			<span class="tab signup"><a href="#signup">Sign up</a></span>
+																		</div>
+																		<div class="content">
+																			<div class="signin-cont cont">
+																				<form action="#" method="post" enctype="multipart/form-data">
+																					<input type="email" name="email" id="email" class="inpt" required="required" placeholder="Your email">
+																					<label for="email">Your email</label>
+																					<input type="password" name="password" id="password" class="inpt" required="required" placeholder="Your password">
+																					<label for="password">Your password</label>
+																					<input type="checkbox" id="remember" class="checkbox" checked>
+																					<label for="remember">Remember me</label>
+																					<div class="submit-wrap">
+																						<input type="submit" value="Sign in" class="submit">
+																						<a href="#" class="more">Forgot your password?</a>
+																					</div>
+																				</form>
+																			</div>
+																			<div class="signup-cont cont">
+																				<form action="#" method="post" enctype="multipart/form-data">
+																					<input type="name" name="name" id="name" class="inpt" required="required" placeholder="Your name">
+																					<label for="name">Your name</label>
+																					<input type="email" name="email" id="email" class="inpt" required="required" placeholder="Your email">
+																					<label for="email">Your email</label>
+																					<input type="password" name="password" id="password" class="inpt" required="required" placeholder="Your password">
+																					<label for="password">Your password</label>
+																					<div class="submit-wrap">
+																						<input type="submit" value="Sign up" class="submit">
+																						<a href="#" class="more">Terms and conditions</a>
+																					</div>
+																				</form>
+																			</div>
+																		</div>
+																	</article>
+																	<div class="half bg"></div>
+																</section>
+
+															</div>
+															<button class="modal-close is-large" @click ="toggleLoginModalOn" aria-label="close"></button>
+														</div>
 
 
 

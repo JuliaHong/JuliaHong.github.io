@@ -1,24 +1,530 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css">
-  	<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"> </script>
-  	<link rel="stylesheet" href="src/styles/helper.css">
-  	<link rel="stylesheet" href="src/styles/main.css">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"> </script>
+  <link rel="stylesheet" href="src/styles/helper.css">
+  <link rel="stylesheet" href="src/styles/main.css">
+  <link rel="stylesheet" href="src/styles/market.css">
+  <style type="text/css">
+  .marketmain {
+    background: black url(src/img/market_main.jpg) center / cover;
+
+  }
+
+  .column-product {
+    margin-left:  column-product20px;
+    margin-right: 20px;
+  }
+
+  @media (max-width: 768px) { /* at mobile*/
+    .title {
+      letter-spacing: 0.45rem;
+    }
+  }
+
+  @media (min-width: 768px) { /* at desktop*/
+    .title {
+      font-size: 85px ;
+      letter-spacing: 2.45rem;}
+
+    }
+    </style>
   </head>
   <body>
 
 
-hi
+    <div id="root">
+
+
+      <section class="hero is-primary is-medium marketmain">
+        <!-- Hero head: will stick at the top -->
+        <nav class="hero-head">
+          <div class="columns is-mobile is-marginless heading has-text-weight-light">
+            <div class="column left">
+              <p class="navbar-item has-text-black has-text-weight-bold" style="font-size : 18px; margin-left: 10px">ROOMIE</p>
+            </div>
+            <div class="column center nav">
+
+              <div class="column right">
+                <p class="navbar-item desktop has-text-black" style="font-size :19px; margin-left:20px;" @click="toggleLoginModalOn" >SIGN UP</p>
+                <div :class="{'dropdown' : true, 'is-right' :true,'is-active':hamberger}">
+                  <div class="dropdown-trigger">
+                    <figure class="navbar-item image">
+                      <a @click="openMenu"> <i class="fas fa-bars has-text-black center" style="width : 1rem; height : 1rem" ></i></a>
+                    </figure>
+                  </div>
+                  <div class="dropdown-menu" id="dropdown-menu3" role="menu">
+                    <div class="dropdown-content">
+                      <a href="#" class="dropdown-item">
+                        HOME
+                      </a>
+                      <a href="#" class="dropdown-item">
+                        ABOUT
+                      </a>
+                      <a href="#" class="dropdown-item">
+                        MARKET
+                      </a>
+                      <a href="#" class="dropdown-item">
+                        FAQ
+                      </a>
+                      <a href="#" class="dropdown-item">
+                        My Page
+                      </a>
+
+                      <hr class="dropdown-divider">
+                      <a href="#"  @click="toggleLoginModalOn" class="dropdown-item">
+                        SIGN IN
+                      </a>
+                      <a href="#" @click="toggleLoginModalOn" class="dropdown-item">
+                        SIGN UP
+                      </a>
+                    </div>
+                  </div>
+                </div>
 
 
 
 
-    <!--Script part -->
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"> </script>
-    <script src="https://unpkg.com/vue-scrollto"></script>
-    <script src="main.js"></script>
-  </body>
-</html>
+              </div>
+
+
+            </div>
+          </nav>
+          <div class="hero-body">
+            <div class="container  has-text-centered">
+              <h1 class="title has-text-black">
+                MARKET
+              </h1>
+              <h2 class="subtitle has-text-black">
+                Shop safer and faster
+              </h2>
+            </div>
+          </div>
+          <div class="hero-foot">
+          </div>
+
+        </section>
+
+
+        <!-- market section -->
+        <section style="margin-top : 100px">
+        <section class="container center">
+          <div class="columns">
+            <div class="column  blog-column">
+              <div class="my-2 mx-auto p-relative bg-white shadow-1 blue-hover" style="width: 300px; margin-left: 13px; margin-right:13px;overflow: hidden; border-radius: 1px;">
+                <img src="https://images.pexels.com/photos/442559/pexels-photo-442559.jpeg?auto=compress&cs=tinysrgb" alt="Man with backpack"
+                class="d-block w-full">
+
+                <div class="px-2 py-2">
+                  <p class="mb-0 small font-weight-medium text-uppercase mb-1 text-muted lts-2px">
+                    Travel
+                  </p>
+
+                  <h1 class="ff-serif font-weight-normal text-black card-heading mt-0 mb-1" style="line-height: 1.25;">
+                    Planning your final summer trip
+                  </h1>
+
+                  <p class="mb-1">
+                    Summer is coming to a close just around the corner. But it's not too late to squeeze in another weekend trip &hellip;
+                  </p>
+
+                </div>
+
+                <a href="#0" class="text-uppercase d-inline-block font-weight-medium lts-2px ml-2 mb-2 text-center styled-link">
+                  Read More
+                </a>
+
+
+
+              </div>
+
+            </div>
+
+
+            <div class="column blog-column">
+              <div class="my-2 mx-auto p-relative bg-white shadow-1 blue-hover" style="width: 300px; margin-left: 13px; margin-right:13px;overflow: hidden; border-radius: 1px;">
+                <img src="https://images.pexels.com/photos/442559/pexels-photo-442559.jpeg?auto=compress&cs=tinysrgb" alt="Man with backpack"
+                class="d-block w-full">
+
+                <div class="px-2 py-2">
+                  <p class="mb-0 small font-weight-medium text-uppercase mb-1 text-muted lts-2px">
+                    Travel
+                  </p>
+
+                  <h1 class="ff-serif font-weight-normal text-black card-heading mt-0 mb-1" style="line-height: 1.25;">
+                    Planning your final summer trip
+                  </h1>
+
+                  <p class="mb-1">
+                    Summer is coming to a close just around the corner. But it's not too late to squeeze in another weekend trip &hellip;
+                  </p>
+
+                </div>
+
+                <a href="#0" class="text-uppercase d-inline-block font-weight-medium lts-2px ml-2 mb-2 text-center styled-link">
+                  Read More
+                </a>
+
+
+
+              </div>
+
+
+            </div>
+            <div class="column blog-column">
+              <div class="my-2 mx-auto p-relative bg-white shadow-1 blue-hover" style="width: 300px;  margin-left: 13px; margin-right:13px;overflow: hidden; border-radius: 1px;">
+                <img src="https://images.pexels.com/photos/442559/pexels-photo-442559.jpeg?auto=compress&cs=tinysrgb" alt="Man with backpack"
+                class="d-block w-full">
+
+                <div class="px-2 py-2">
+                  <p class="mb-0 small font-weight-medium text-uppercase mb-1 text-muted lts-2px">
+                    Travel
+                  </p>
+
+                  <h1 class="ff-serif font-weight-normal text-black card-heading mt-0 mb-1" style="line-height: 1.25;">
+                    Planning your final summer trip
+                  </h1>
+
+                  <p class="mb-1">
+                    Summer is coming to a close just around the corner. But it's not too late to squeeze in another weekend trip &hellip;
+                  </p>
+
+                </div>
+
+                <a href="#0" class="text-uppercase d-inline-block font-weight-medium lts-2px ml-2 mb-2 text-center styled-link">
+                  Read More
+                </a>
+
+
+
+              </div>
+
+
+            </div>
+            <div class="column blog-column">
+              <div class="my-2 mx-auto p-relative bg-white shadow-1 blue-hover" style="width: 300px;  margin-left: 13px; margin-right:13px;overflow: hidden; border-radius: 1px;">
+                <img src="https://images.pexels.com/photos/442559/pexels-photo-442559.jpeg?auto=compress&cs=tinysrgb" alt="Man with backpack"
+                class="d-block w-full">
+
+                <div class="px-2 py-2">
+                  <p class="mb-0 small font-weight-medium text-uppercase mb-1 text-muted lts-2px">
+                    Travel
+
+                  </p>
+
+                  <h1 class="ff-serif font-weight-normal text-black card-heading mt-0 mb-1" style="line-height: 1.25;">
+                    Planning your final summer trip
+                  </h1>
+
+                  <p class="mb-1">
+                    Summer is coming to a close just around the corner. But it's not too late to squeeze in another weekend trip &hellip;
+                  </p>
+
+                </div>
+
+                <a href="#0" class="text-uppercase d-inline-block font-weight-medium lts-2px ml-2 mb-2 text-center styled-link">
+                  Read More
+                </a>
+
+
+
+              </div>
+
+
+            </div>
+          </div>
+
+        </section>
+
+        <section class="container center">
+          <div class="columns">
+            <div class="column  blog-column">
+              <div class="my-2 mx-auto p-relative bg-white shadow-1 blue-hover" style="width: 300px; margin-left: 13px; margin-right:13px;overflow: hidden; border-radius: 1px;">
+                <img src="https://images.pexels.com/photos/442559/pexels-photo-442559.jpeg?auto=compress&cs=tinysrgb" alt="Man with backpack"
+                class="d-block w-full">
+
+                <div class="px-2 py-2">
+                  <p class="mb-0 small font-weight-medium text-uppercase mb-1 text-muted lts-2px">
+                    Travel
+                  </p>
+
+                  <h1 class="ff-serif font-weight-normal text-black card-heading mt-0 mb-1" style="line-height: 1.25;">
+                    Planning your final summer trip
+                  </h1>
+
+                  <p class="mb-1">
+                    Summer is coming to a close just around the corner. But it's not too late to squeeze in another weekend trip &hellip;
+                  </p>
+
+                </div>
+
+                <a href="#0" class="text-uppercase d-inline-block font-weight-medium lts-2px ml-2 mb-2 text-center styled-link">
+                  Read More
+                </a>
+
+
+
+              </div>
+
+            </div>
+
+
+            <div class="column blog-column">
+              <div class="my-2 mx-auto p-relative bg-white shadow-1 blue-hover" style="width: 300px; margin-left: 13px; margin-right:13px;overflow: hidden; border-radius: 1px;">
+                <img src="https://images.pexels.com/photos/442559/pexels-photo-442559.jpeg?auto=compress&cs=tinysrgb" alt="Man with backpack"
+                class="d-block w-full">
+
+                <div class="px-2 py-2">
+                  <p class="mb-0 small font-weight-medium text-uppercase mb-1 text-muted lts-2px">
+                    Travel
+                  </p>
+
+                  <h1 class="ff-serif font-weight-normal text-black card-heading mt-0 mb-1" style="line-height: 1.25;">
+                    Planning your final summer trip
+                  </h1>
+
+                  <p class="mb-1">
+                    Summer is coming to a close just around the corner. But it's not too late to squeeze in another weekend trip &hellip;
+                  </p>
+
+                </div>
+
+                <a href="#0" class="text-uppercase d-inline-block font-weight-medium lts-2px ml-2 mb-2 text-center styled-link">
+                  Read More
+                </a>
+
+
+
+              </div>
+
+
+            </div>
+            <div class="column blog-column">
+              <div class="my-2 mx-auto p-relative bg-white shadow-1 blue-hover" style="width: 300px;  margin-left: 13px; margin-right:13px;overflow: hidden; border-radius: 1px;">
+                <img src="https://images.pexels.com/photos/442559/pexels-photo-442559.jpeg?auto=compress&cs=tinysrgb" alt="Man with backpack"
+                class="d-block w-full">
+
+                <div class="px-2 py-2">
+                  <p class="mb-0 small font-weight-medium text-uppercase mb-1 text-muted lts-2px">
+                    Travel
+                  </p>
+
+                  <h1 class="ff-serif font-weight-normal text-black card-heading mt-0 mb-1" style="line-height: 1.25;">
+                    Planning your final summer trip
+                  </h1>
+
+                  <p class="mb-1">
+                    Summer is coming to a close just around the corner. But it's not too late to squeeze in another weekend trip &hellip;
+                  </p>
+
+                </div>
+
+                <a href="#0" class="text-uppercase d-inline-block font-weight-medium lts-2px ml-2 mb-2 text-center styled-link">
+                  Read More
+                </a>
+
+
+
+              </div>
+
+
+            </div>
+            <div class="column blog-column">
+              <div class="my-2 mx-auto p-relative bg-white shadow-1 blue-hover" style="width: 300px;  margin-left: 13px; margin-right:13px;overflow: hidden; border-radius: 1px;">
+                <img src="https://images.pexels.com/photos/442559/pexels-photo-442559.jpeg?auto=compress&cs=tinysrgb" alt="Man with backpack"
+                class="d-block w-full">
+
+                <div class="px-2 py-2">
+                  <p class="mb-0 small font-weight-medium text-uppercase mb-1 text-muted lts-2px">
+                    Travel
+
+                  </p>
+
+                  <h1 class="ff-serif font-weight-normal text-black card-heading mt-0 mb-1" style="line-height: 1.25;">
+                    Planning your final summer trip
+                  </h1>
+
+                  <p class="mb-1">
+                    Summer is coming to a close just around the corner. But it's not too late to squeeze in another weekend trip &hellip;
+                  </p>
+
+                </div>
+
+                <a href="#0" class="text-uppercase d-inline-block font-weight-medium lts-2px ml-2 mb-2 text-center styled-link">
+                  Read More
+                </a>
+
+
+
+              </div>
+
+
+            </div>
+          </div>
+
+        </section>
+
+        <section class="container center">
+          <div class="columns">
+            <div class="column  blog-column">
+              <div class="my-2 mx-auto p-relative bg-white shadow-1 blue-hover" style="width: 300px; margin-left: 13px; margin-right:13px;overflow: hidden; border-radius: 1px;">
+                <img src="https://images.pexels.com/photos/442559/pexels-photo-442559.jpeg?auto=compress&cs=tinysrgb" alt="Man with backpack"
+                class="d-block w-full">
+
+                <div class="px-2 py-2">
+                  <p class="mb-0 small font-weight-medium text-uppercase mb-1 text-muted lts-2px">
+                    Travel
+                  </p>
+
+                  <h1 class="ff-serif font-weight-normal text-black card-heading mt-0 mb-1" style="line-height: 1.25;">
+                    Planning your final summer trip
+                  </h1>
+
+                  <p class="mb-1">
+                    Summer is coming to a close just around the corner. But it's not too late to squeeze in another weekend trip &hellip;
+                  </p>
+
+                </div>
+
+                <a href="#0" class="text-uppercase d-inline-block font-weight-medium lts-2px ml-2 mb-2 text-center styled-link">
+                  Read More
+                </a>
+
+
+
+              </div>
+
+            </div>
+
+
+            <div class="column blog-column">
+              <div class="my-2 mx-auto p-relative bg-white shadow-1 blue-hover" style="width: 300px; margin-left: 13px; margin-right:13px;overflow: hidden; border-radius: 1px;">
+                <img src="https://images.pexels.com/photos/442559/pexels-photo-442559.jpeg?auto=compress&cs=tinysrgb" alt="Man with backpack"
+                class="d-block w-full">
+
+                <div class="px-2 py-2">
+                  <p class="mb-0 small font-weight-medium text-uppercase mb-1 text-muted lts-2px">
+                    Travel
+                  </p>
+
+                  <h1 class="ff-serif font-weight-normal text-black card-heading mt-0 mb-1" style="line-height: 1.25;">
+                    Planning your final summer trip
+                  </h1>
+
+                  <p class="mb-1">
+                    Summer is coming to a close just around the corner. But it's not too late to squeeze in another weekend trip &hellip;
+                  </p>
+
+                </div>
+
+                <a href="#0" class="text-uppercase d-inline-block font-weight-medium lts-2px ml-2 mb-2 text-center styled-link">
+                  Read More
+                </a>
+
+
+
+              </div>
+
+
+            </div>
+            <div class="column blog-column">
+              <div class="my-2 mx-auto p-relative bg-white shadow-1 blue-hover" style="width: 300px;  margin-left: 13px; margin-right:13px;overflow: hidden; border-radius: 1px;">
+                <img src="https://images.pexels.com/photos/442559/pexels-photo-442559.jpeg?auto=compress&cs=tinysrgb" alt="Man with backpack"
+                class="d-block w-full">
+
+                <div class="px-2 py-2">
+                  <p class="mb-0 small font-weight-medium text-uppercase mb-1 text-muted lts-2px">
+                    Travel
+                  </p>
+
+                  <h1 class="ff-serif font-weight-normal text-black card-heading mt-0 mb-1" style="line-height: 1.25;">
+                    Planning your final summer trip
+                  </h1>
+
+                  <p class="mb-1">
+                    Summer is coming to a close just around the corner. But it's not too late to squeeze in another weekend trip &hellip;
+                  </p>
+
+                </div>
+
+                <a href="#0" class="text-uppercase d-inline-block font-weight-medium lts-2px ml-2 mb-2 text-center styled-link">
+                  Read More
+                </a>
+
+
+
+              </div>
+
+
+            </div>
+            <div class="column blog-column">
+              <div class="my-2 mx-auto p-relative bg-white shadow-1 blue-hover" style="width: 300px;  margin-left: 13px; margin-right:13px;overflow: hidden; border-radius: 1px;">
+                <img src="https://images.pexels.com/photos/442559/pexels-photo-442559.jpeg?auto=compress&cs=tinysrgb" alt="Man with backpack"
+                class="d-block w-full">
+
+                <div class="px-2 py-2">
+                  <p class="mb-0 small font-weight-medium text-uppercase mb-1 text-muted lts-2px">
+                    Travel
+
+                  </p>
+
+                  <h1 class="ff-serif font-weight-normal text-black card-heading mt-0 mb-1" style="line-height: 1.25;">
+                    Planning your final summer trip
+                  </h1>
+
+                  <p class="mb-1">
+                    Summer is coming to a close just around the corner. But it's not too late to squeeze in another weekend trip &hellip;
+                  </p>
+
+                </div>
+
+                <a href="#0" class="text-uppercase d-inline-block font-weight-medium lts-2px ml-2 mb-2 text-center styled-link">
+                  Read More
+                </a>
+
+
+
+              </div>
+
+
+            </div>
+          </div>
+
+        </section>
+      </section>
+        <!-- market pagination  -->
+
+        <section>
+          <div class="container">
+            <nav class="pagination-container">
+              <div class="pagination">
+                <a class="pagination-newer" href="#">PREV</a>
+                <span class="pagination-inner">
+                  <a href="#">1</a>
+                  <a class="pagination-active" href="#">2</a>
+                  <a href="#">3</a>
+                  <a href="#">4</a>
+
+                </span>
+                <a class="pagination-older" href="#">NEXT</a>
+              </div>
+            </nav>
+
+          </div>
+        </section>
+
+        <!-- vue root div don't touch  -->
+        <div>
+
+
+
+          <!--Script part -->
+          <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"> </script>
+          <script src="https://unpkg.com/vue-scrollto"></script>
+          <script src="market.js"></script>
+        </body>
+        </html>

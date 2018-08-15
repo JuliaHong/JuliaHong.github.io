@@ -1,15 +1,15 @@
 @import url(https://fonts.googleapis.com/css?family=Lora|Roboto:400,500);
 
- body {
-   margin: 0;
-   padding: 0;
-   font-size: 16px;
-   line-height: 1.5;
-   text-rendering: optimizeLegibility;
-   font-variant-ligatures: none;
-   box-sizing: border-box;
-   font-family: 'Roboto', sans-serif;
-   background-color: #fafafa;
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  font-variant-ligatures: none;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  background-color: #fafafa;
 }
 body::before,
 body::after {
@@ -24,8 +24,8 @@ p, h1 {
   margin: 0; padding: 0;
 }
 
- body, .text-light-black {
-   color: rgba(0,0,0,0.6);
+body, .text-light-black {
+  color: rgba(0,0,0,0.6);
 }
 .text-black {
   color: rgba(0,0,0,0.9);
@@ -50,8 +50,8 @@ p, h1 {
   font-weight: 500;
 }
 
- .lts-1px {
-   letter-spacing: 1px;
+.lts-1px {
+  letter-spacing: 1px;
 }
 .lts-2px {
   letter-spacing: 2px;

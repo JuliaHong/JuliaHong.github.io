@@ -3,7 +3,7 @@ var app = new Vue({
   el : '#root',
   data : {
     hamberger : false,
-    hi : "hi mother fucker"
+    loginModalOn : false
   },
   methods : {
     openMenu(){
@@ -12,6 +12,14 @@ var app = new Vue({
       }else{
         this.hamberger=true;
       }
+    },
+    toggleLoginModalOn(){
+      if(this.loginModalOn==true){
+        this.loginModalOn=false;
+      }else{
+        this.loginModalOn=true;
+      }
+
     }
   }
 })
